@@ -9,9 +9,6 @@ while True:
 	else: 
 		print(result)  
 
-# !!! FIX : Boolean Statements, not working : !:
-#											: >:
-
 # !!! REFACTOR: Variable Type System, If needed.
 
 # !!! IMPLIMENT: BOOLEAN variable type.
