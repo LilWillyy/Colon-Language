@@ -1,0 +1,17 @@
+expr         : KEYWORD:var VAR_TYPE:? IDENTIFIER COLON expr
+			 : comp-expr((KEYWORD:and |KEYWORD: or) comp-expr)				 
+
+comp-expr    : KEYWORD:not comp-expr
+			 : arith-expr ((EE|NE|LT|GT|LTE|GTE) arith-expr)			 
+
+arith-expr   : term ((PLUS|MINUS) term)*
+
+term         : factor ((MULT|DIV) factor)*
+
+factor       : (PLUS|MINUS) factor
+	         : power
+	   	   
+power        : atom(PWR factor)*
+
+atom         : INT|FLOAT|IDENTIFIER
+	         : LPAREN expr RPAREN
